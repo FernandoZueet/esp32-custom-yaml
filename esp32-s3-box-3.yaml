@@ -200,6 +200,9 @@ voice_assistant:
         id: text_request
         state: !lambda return x;
     - script.execute: draw_display
+    - platform: template
+      name: "Response voice assistant"
+      lambda: !lambda return x;
   on_tts_start:
     - text_sensor.template.publish:
         id: text_response
